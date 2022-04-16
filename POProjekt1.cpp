@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Swiat.h"
 #include "Wilk.h"
+
 using namespace std;
 
 int main()
@@ -11,11 +12,15 @@ int main()
     Swiat swiat = Swiat();
     string command;
 
-    Polozenie p = {2, 3 };
-    Wilk wilk =  Wilk(p);
+    Polozenie p = {0, 0 };
+    Polozenie p2 = { 0, 0 };
+   
+    Wilk wilk =  Wilk(p, &swiat);
+    Wilk wilk2 = Wilk(p2, &swiat);
     while (cin>>command) {
         if (command == "e") break;
         swiat.dodajZwierze(&wilk);
+        swiat.dodajZwierze(&wilk2);
 
         swiat.wykonajTure();
         swiat.rysujSwiat();

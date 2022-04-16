@@ -1,13 +1,18 @@
 #include "Wilk.h"
 #include <iostream>
 #include "map.h"
+using namespace std;
 
-Wilk::Wilk(Polozenie p): Zwierze(p) {
+Wilk::Wilk(Polozenie p, Swiat* s): Zwierze(p, s) {
 	this->polozenie = p;
 }
 
-void Wilk::kolizja() {
-	int hehe = 0;
+void Wilk::kolizja(map* m, int ROZMIAR) {
+	
+}
+Wilk Wilk::noweZwierze(Polozenie p, Swiat* s)
+{
+	return Wilk(p,s);
 }
 void Wilk::rysowanie() {
 	std::cout << "| w ";
@@ -16,3 +21,4 @@ void Wilk::rysowanie() {
 void Wilk::akcja(map* m, int ROZMIAR) {
 	Zwierze::akcja(m, ROZMIAR);
 }
+

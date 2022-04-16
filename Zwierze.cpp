@@ -2,8 +2,10 @@
 #include "map.h"
 #include "funkcje.h"
 #include <cstdlib>
+#include <string>
+#include <iostream>
 
-Zwierze::Zwierze(Polozenie p): Organizm(p)
+Zwierze::Zwierze(Polozenie p, Swiat* s): Organizm(p, s)
 {
 
 }
@@ -23,5 +25,15 @@ void Zwierze::akcja(map* mapa, int ROZMIAR) {
 	if (polozenie.y < 0) polozenie.y = 0;
 	if (polozenie.y >= ROZMIAR) polozenie.y = ROZMIAR - 1;
 
+	
+
+	if (mapa[getIndex(polozenie.x, polozenie.y, ROZMIAR)].z) {
+		mapa[0].z = mapa[getIndex(polozenie.x, polozenie.y, ROZMIAR)].z;//this->(polozenie, swiat);
+		this->kolizja(mapa, ROZMIAR);
+		std::cout << "Asd";
+	}
+		
+
 	mapa[getIndex(polozenie.x, polozenie.y, ROZMIAR)].z = this;
+
 }
