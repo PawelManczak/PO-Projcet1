@@ -1,14 +1,14 @@
 #include "Swiat.h"
-#include <iostream>
+#include "funkcje.h"
 using namespace std;
 
 void Swiat::rysujSwiat() {
 
 	for (int x = 0; x < ROZMIAR; x++) {
 		for (int y = 0; y < ROZMIAR; y++) {
-			if (mapa[x][y].z) mapa[x][y].z->rysowanie();
+			if (mapa[getIndex(x,y, ROZMIAR)].z) mapa[getIndex(x, y, ROZMIAR)].z->rysowanie();
 			else cout << "|   ";
-			if (mapa[x][y].r) mapa[x][y].z->rysowanie();
+			if (mapa[getIndex(x, y, ROZMIAR)].r) mapa[getIndex(x, y, ROZMIAR)].z->rysowanie();
 			else cout << "    ";
 		}
 	}
@@ -18,13 +18,14 @@ void Swiat::rysujSwiat() {
 void Swiat::wykonajTure() {
 	for (int x = 0; x < ROZMIAR; x++) {
 		for (int y = 0; y < ROZMIAR; y++) {
-			if (mapa[x][y].z) mapa[x][y].z->akcja();
+			if (mapa[getIndex(x, y, ROZMIAR)].z) mapa[getIndex(x, y, ROZMIAR)].z->akcja(mapa, ROZMIAR);
 		}
 	}
 
 }
 
 void Swiat::dodajZwierze(Zwierze* zwierze) {
-	mapa[zwierze->getX()][zwierze->getY()].z = zwierze;
+	
+	mapa[getIndex(zwierze->getX(), zwierze->getY(), ROZMIAR)].z = zwierze;
 
 }

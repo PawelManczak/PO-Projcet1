@@ -16,7 +16,7 @@ public:
 
 private:
 
-	static const int ROZMIAR = 20;
-	map mapa[ROZMIAR][ROZMIAR];
+	static const int ROZMIAR = 8;
+	map mapa[ROZMIAR*ROZMIAR];
 };
 

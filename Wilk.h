@@ -10,6 +10,8 @@ class Wilk :
 public:
     Wilk(Polozenie p);
     void rysowanie();
-    //int j() { return polozenie.x; }
+    void akcja(map* m, int ROZMIAR);
+    void kolizja();
+
 };
 
