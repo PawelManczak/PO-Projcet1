@@ -6,6 +6,7 @@ struct map;
 
 class Organizm
 {
+	bool ruch = true;
 	char gatunek[5];
 	int sila, inicjatywa;
 	Swiat* swiat;
@@ -23,5 +24,7 @@ public:
 	int getX() { return polozenie.x; }
 	int getY() { return polozenie.y; }
 	Swiat* getSwiat() { return swiat; };
+	bool getRuch() { return ruch; }
+	void changeRuch() { ruch ? ruch = false : ruch = true; };
 };
 

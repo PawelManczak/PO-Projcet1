@@ -12,6 +12,6 @@ public:
     void rysowanie();
     void akcja(map* m, int ROZMIAR);
     void kolizja(map* m, int ROZMIAR);
-    Wilk noweZwierze(Polozenie p, Swiat* s);
+    Wilk* noweZwierze(Polozenie p, Swiat* s);
 
 };

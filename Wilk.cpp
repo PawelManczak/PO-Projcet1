@@ -10,9 +10,9 @@ Wilk::Wilk(Polozenie p, Swiat* s): Zwierze(p, s) {
 void Wilk::kolizja(map* m, int ROZMIAR) {
 	
 }
-Wilk Wilk::noweZwierze(Polozenie p, Swiat* s)
+Wilk* Wilk::noweZwierze(Polozenie p, Swiat* s)
 {
-	return Wilk(p,s);
+	return new Wilk(p,s);
 }
 void Wilk::rysowanie() {
 	std::cout << "| w ";

@@ -9,18 +9,22 @@ using namespace std;
 
 int main()
 {
+    srand(time(NULL));
+
     Swiat swiat = Swiat();
     string command;
 
     Polozenie p = {0, 0 };
-    Polozenie p2 = { 0, 0 };
+    Polozenie p2 = { 3, 3 };
    
     Wilk wilk =  Wilk(p, &swiat);
     Wilk wilk2 = Wilk(p2, &swiat);
+    swiat.dodajZwierze(&wilk);
+    swiat.dodajZwierze(&wilk2);
+
     while (cin>>command) {
         if (command == "e") break;
-        swiat.dodajZwierze(&wilk);
-        swiat.dodajZwierze(&wilk2);
+        
 
         swiat.wykonajTure();
         swiat.rysujSwiat();

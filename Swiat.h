@@ -13,10 +13,11 @@ public:
 	void dodajZwierze(Zwierze* zwierze);
 	void wykonajTure();
 	void rysujSwiat();
+	map* getMapa() { return mapa; };
 
 private:
 
-	static const int ROZMIAR = 2;
+	static const int ROZMIAR = 5;
 	map mapa[ROZMIAR*ROZMIAR];
 };
 
