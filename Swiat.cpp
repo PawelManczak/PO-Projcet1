@@ -16,9 +16,15 @@ void Swiat::rysujSwiat() {
 }
 
 void Swiat::wykonajTure() {
-	for (int x = 0; x < ROZMIAR; x++) {
-		for (int y = 0; y < ROZMIAR; y++) {
-			if (mapa[getIndex(x, y, ROZMIAR)].z && mapa[getIndex(x, y, ROZMIAR)].z->getRuch()) mapa[getIndex(x, y, ROZMIAR)].z->akcja(mapa, ROZMIAR);
+	int maxInicjatywa = 11;
+
+	for (int i = maxInicjatywa; i > 0; i--) {
+		for (int x = 0; x < ROZMIAR; x++) {
+			for (int y = 0; y < ROZMIAR; y++) {
+				map pole = mapa[getIndex(x, y, ROZMIAR)];
+				if (pole.z && pole.z->getRuch()
+					&& pole.z->getInicjatywa() == i ) mapa[getIndex(x, y, ROZMIAR)].z->akcja(mapa, ROZMIAR);
+			}
 		}
 	}
 

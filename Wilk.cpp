@@ -22,3 +22,7 @@ void Wilk::akcja(map* m, int ROZMIAR) {
 	Zwierze::akcja(m, ROZMIAR);
 }
 
+char* Wilk::getGatunek() {
+	return gatunek;
+}
+

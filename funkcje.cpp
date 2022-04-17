@@ -1,6 +1,6 @@
 #include "polozenie.h"
-#include<cstdlib>
-#include"map.h"
+#include <cstdlib>
+#include "map.h"
 int getIndex(int x, int y, int customWidth) {
     return x + y * customWidth;
 }
@@ -35,5 +35,9 @@ Polozenie getLosoweWolneOdZwierzatWPoblizu(Polozenie polozenie, int ROZMIAR, map
 		licznik--;
 	} while (mapa[getIndex(polozenie.x, polozenie.y, ROZMIAR)].z && licznik > 0);
 
+	if (mapa[getIndex(polozenie.x, polozenie.y, ROZMIAR)].z) {
+		Polozenie p = { -1,-1 };
+		return p;
+	}
 	return polozenie;
 }

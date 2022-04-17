@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Swiat.h"
 #include "Wilk.h"
+#include "Owca.h"
 
 using namespace std;
 
@@ -16,11 +17,16 @@ int main()
 
     Polozenie p = {0, 0 };
     Polozenie p2 = { 3, 3 };
+    Polozenie p3 = { 4, 3 };
    
     Wilk wilk =  Wilk(p, &swiat);
     Wilk wilk2 = Wilk(p2, &swiat);
+    Owca owca = Owca(p3, &swiat);
     swiat.dodajZwierze(&wilk);
     swiat.dodajZwierze(&wilk2);
+    swiat.dodajZwierze(&owca);
+
+    //cout << wilk.getGatunek();
 
     while (cin>>command) {
         if (command == "e") break;
